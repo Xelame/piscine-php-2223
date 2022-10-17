@@ -10,6 +10,9 @@ do {
     if ($nbrRicard == 5) {
         echo "I am no longer very fresh...\n";
     }
+    if ($nbrRicard == 7) {
+        echo "Come on ricard number $nbrRicard";
+    }
     $nbrRicard++;
 } while ($nbrRicard <= 7);
 
