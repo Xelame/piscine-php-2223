@@ -1,5 +1,5 @@
 <?php
-$hour = 0;
+$hour;
 
 if (6 <= $hour && $hour <= 12) {
     echo "Hello! Have a nice day :)";
