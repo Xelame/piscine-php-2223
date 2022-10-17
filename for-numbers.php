@@ -1,5 +1,5 @@
 <?php
-for ($number = 1; $number <= 100; $number++) {
+for ($number = 2; $number <= 100; $number++) {
     $numberOfDiv = 0;
     for ($div = 1; $div <= round(sqrt($number)); $div++) {
         if ($number % $div == 0) {
@@ -7,6 +7,6 @@ for ($number = 1; $number <= 100; $number++) {
         }   
     }
     if ($numberOfDiv == 1) {
-        echo "$number, ";
+        echo $number != 97 ? "$number, " : "$number";
     }
 }
