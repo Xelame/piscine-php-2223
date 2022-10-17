@@ -1,7 +1,7 @@
 <?php
 $hour = 0;
 
-if (6 < $hour && $hour <= 12) {
+if (6 <= $hour && $hour <= 12) {
     echo "Hello! Have a nice day :)";
 } elseif (12 < $hour && $hour <= 18) {
     echo "Have a good afternoon!";
