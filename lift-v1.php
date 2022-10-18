@@ -2,7 +2,7 @@
 
 function getFloor(int $currentfloor, int|null $floorRequest, array $buttonList) : int|null {
     
-    if ($currentfloor == $floorRequest) {
+    if ($currentfloor === $floorRequest) {
         return $floorRequest;
     }
 
@@ -28,7 +28,7 @@ function getFloor(int $currentfloor, int|null $floorRequest, array $buttonList) 
 }
 
 function getDirection(int $currentfloor, int|null $floorRequest, array $buttonList) : int {
-    if ($floorRequest == null) {
+    if ($floorRequest === null) {
         return 0;
     } else {
         if ($currentfloor < $floorRequest) {
@@ -36,8 +36,7 @@ function getDirection(int $currentfloor, int|null $floorRequest, array $buttonLi
         } else {
             return -1;
         }
-        
     }
 }
 
-echo getDirection(0, 1, []);
+echo getFloor(3, null, [1, 7]);
