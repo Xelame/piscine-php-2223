@@ -19,6 +19,7 @@ function getFloor(int $currentfloor, int|null $floorRequest, array $buttonList) 
         }
         return $floorRequest;
     }
+    return $currentfloor;
 }
 
 function getDirection(int $currentfloor, int|null $floorRequest, array $buttonList) : int {
