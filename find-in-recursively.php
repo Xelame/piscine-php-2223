@@ -14,15 +14,17 @@ $tab = [
 ];
 
 
-function findIn(string $key, array $array) : bool|string {
-    $result = false; 
-    foreach ($array as $value) {
-        if (gettype($value) === 'array') {
-            findIn($key, $value);
-        }
-        if ($value === $key) {
-            return $value;
+function findIn(string $search, array $array) : bool|string {
+    foreach ($array as $key => $value) {
+        if (is_array($value)) {
+            return findIn($search, $value);
+        } else {
+            if ($key === $search) {
+                return $value;
+            }
         }
     }
-    return $result;
+    return false;
 }
+
+echo findIn("name", $tab);
