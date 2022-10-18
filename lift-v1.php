@@ -7,14 +7,18 @@ function getFloor(int $currentfloor, int|null $floorRequest, array $buttonList) 
     }
 
     if ($buttonList != [] && !in_array($currentfloor, $buttonList)) {
-        $distance = 0;
-        foreach ($buttonList as $button) {
-            if ($distance < abs($currentfloor - $button)) {
-                $distance = abs($currentfloor - $button);
-                $currentfloor = $button;
+        $negdistance = $currentfloor;
+        $posdistance = $currentfloor;
+        while (true) {
+            $negdistance--;
+            $posdistance++;
+            if (in_array($negdistance, $buttonList)) {
+                return $negdistance;
+            }
+            if (in_array($posdistance, $buttonList)) {
+                return $posdistance;
             }
         }
-        return $currentfloor;
     }
 
     if ($floorRequest === null) {
@@ -38,3 +42,5 @@ function getDirection(int $currentfloor, int|null $floorRequest, array $buttonLi
         }
     }
 }
+
+echo getFloor(3, null, [1, 7]);
