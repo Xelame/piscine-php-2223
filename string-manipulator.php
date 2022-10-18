@@ -17,7 +17,11 @@ function upperCaseFirst(string $string) : string {
 }
 
 function lowerCaseFirst(string $string) : string {
-    return lcfirst($string);
+    $array = explode(" ", $string);
+    foreach ($array as $key => $value) {
+        $array[$key] = lcfirst($value);
+    }
+    return implode(" ", $array);
 }
 
 function removeBlankSpace(string $string) : string {
