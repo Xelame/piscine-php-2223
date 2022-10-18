@@ -1,7 +1,7 @@
 <?php
 
 function getFloor(int $currentfloor, int|null $floorRequest, array $buttonList) : int {
-    return $currentfloor;
+    return $floorRequest === null ? null : $currentfloor;
 }
 
 function getDirection(int $currentfloor, int|null $floorRequest, array $buttonList) : int {
