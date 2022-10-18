@@ -9,7 +9,7 @@ function lowerMe(string $string) : string {
 }
 
 function upperCaseFirst(string $string) : string {
-    return ucfirst($string);
+    return capsMe(substr($string, 0, 1)) . substr($string, 1);
 }
 
 function lowerCaseFirst(string $string) : string {
