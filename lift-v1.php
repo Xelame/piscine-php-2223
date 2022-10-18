@@ -1,6 +1,6 @@
 <?php
 
-function getFloor(int $currentfloor, int|null $floorRequest, array $buttonList) : int {
+function getFloor(int $currentfloor, int|null $floorRequest, array $buttonList) : int|null {
     return $floorRequest === null ? null : $currentfloor;
 }
 
