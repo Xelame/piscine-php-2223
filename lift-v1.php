@@ -5,19 +5,17 @@ function getFloor(int $currentfloor, int|null $floorRequest, array $buttonList) 
         return null;
     }
     if ($currentfloor === $floorRequest) {
-        return $currentfloor;
-    }
-    if ($currentfloor < $floorRequest) {
-        if (in_array($currentfloor, $buttonList)) {
-            return $currentfloor;
-        }
         return $floorRequest;
     }
-    if ($currentfloor > $floorRequest) {
-        if (in_array($currentfloor, $buttonList)) {
-            return $currentfloor;
+
+    if ($buttonList != []) {
+        $distance = 0;
+        foreach ($buttonList as $key => $value) {
+            if ($distance > abs($currentfloor - $value)) {
+                $distance = abs($currentfloor - $value);
+            }
         }
-        return $floorRequest;
+        return $distance;
     }
 }
 
