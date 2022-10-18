@@ -1,16 +1,15 @@
 <?php
 function breakLines(string $string, int $lenght): string {
-    $lines = "";
+    $lines = [];
     $words = explode(" ", $string);
     $currentLine = "";
-    for ($i = 0; $i < count($words); $i++) {
-        if (strlen($currentLine) + strlen($words[$i]) <= $lenght) {
-            $currentLine .= $words[$i] . " ";
-        } else {
-            $lines .= $currentLine . PHP_EOL;
-            $currentLine = $words[$i] . " ";
+    foreach ($words as $word) {
+        if (strlen($currentLine) + strlen($word) > $lenght) {
+            $lines[] = $currentLine;
+            $currentLine = "";
         }
+        $currentLine .= $word . " ";
     }
-    $lines .= $currentLine;
-    return $lines;
+    $lines[] = $currentLine;
+    return implode("\n", $lines);
 }
