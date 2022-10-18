@@ -17,14 +17,17 @@ $tab = [
 function findIn(string $search, array $array) : bool|string {
     foreach ($array as $key => $value) {
         if (is_array($value)) {
-            return findIn($search, $value);
+            $result = findIn($search, $value);
+            if (gettype($result) === "string") {
+                return $result;
+            }
         } else {
             if ($key === $search) {
                 return $value;
-            }
+            } 
         }
     }
     return false;
 }
 
-echo findIn("name", $tab);
+echo findIn('secondParam', $tab);
