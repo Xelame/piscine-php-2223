@@ -5,6 +5,7 @@ function breakLines(string $string, int $lenght): string {
     $currentLine = "";
     foreach ($words as $word) {
         if (strlen($currentLine) + strlen($word) > $lenght) {
+            $currentLine = trim($currentLine);
             $lines[] = $currentLine;
             $currentLine = "";
         }
