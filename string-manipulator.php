@@ -9,7 +9,11 @@ function lowerMe(string $string) : string {
 }
 
 function upperCaseFirst(string $string) : string {
-    return capsMe(substr($string, 0, 1)) . substr($string, 1);
+    $array = explode(" ", $string);
+    foreach ($array as $key => $value) {
+        $array[$key] = ucfirst($value);
+    }
+    return implode(" ", $array);
 }
 
 function lowerCaseFirst(string $string) : string {
@@ -19,3 +23,5 @@ function lowerCaseFirst(string $string) : string {
 function removeBlankSpace(string $string) : string {
     return str_replace(' ', '', $string);
 }
+
+echo upperCaseFirst('hello My Name is Quentin');
