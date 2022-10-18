@@ -1,16 +1,16 @@
 <?php
-function breakLines(string $string, int $lenght): string{
-    $newString = "";
+function breakLines(string $string, int $lenght): string {
+    $lines = "";
     $words = explode(" ", $string);
-    $currentLenght = 0;
+    $currentLine = "";
     foreach ($words as $word) {
-        if ($currentLenght + strlen($word) + 1 <= $lenght) {
-            $currentLenght += strlen($word) + 1;
-            $newString .= $word . " ";
+        if (strlen($currentLine) + strlen($word) + 1 <= $lenght) {
+            $currentLine .= $word . " ";
         } else {
-            $currentLenght = 0;
-            $newString .= $word . "\n";
+            $lines .= $currentLine . "\n";
+            $currentLine = $word . " ";
         }
     }
-    return $newString;
+    $lines .= $currentLine;
+    return $lines;
 }
