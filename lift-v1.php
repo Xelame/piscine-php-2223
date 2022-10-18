@@ -5,9 +5,9 @@ function getFloor(int $currentfloor, int|null $floorRequest, array $buttonList) 
     if ($currentfloor === $floorRequest) {
         return $floorRequest;
     }
-    
+
     if ($buttonList != [] && !in_array($currentfloor, $buttonList)) {
-        $distance = 0;
+        $distance = $currentfloor;
         foreach ($buttonList as $button) {
             if ($distance < abs($currentfloor - $button)) {
                 $distance = abs($currentfloor - $button);
