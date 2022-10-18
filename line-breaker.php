@@ -3,12 +3,12 @@ function breakLines(string $string, int $lenght): string {
     $lines = "";
     $words = explode(" ", $string);
     $currentLine = "";
-    foreach ($words as $word) {
-        if (strlen($currentLine) + strlen($word) + 1 <= $lenght) {
-            $currentLine .= $word . " ";
+    for ($i = 0; $i < count($words); $i++) {
+        if (strlen($currentLine) + strlen($words[$i]) <= $lenght) {
+            $currentLine .= $words[$i] . " ";
         } else {
-            $lines .= $currentLine . "\n";
-            $currentLine = $word . " ";
+            $lines .= $currentLine . PHP_EOL;
+            $currentLine = $words[$i] . " ";
         }
     }
     $lines .= $currentLine;
