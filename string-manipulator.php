@@ -25,7 +25,7 @@ function lowerCaseFirst(string $string) : string {
 }
 
 function removeBlankSpace(string $string) : string {
-    return str_replace(' ', '', $string);
+    return trim($string);
 }
 
 echo upperCaseFirst('hello My Name is Quentin');
