@@ -1,6 +1,6 @@
 <?php
 
-function capseMe(string $string) : string {
+function capsMe(string $string) : string {
     return strtoupper($string);
 }
 
