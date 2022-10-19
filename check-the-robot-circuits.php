@@ -18,7 +18,7 @@ function checkCircuits(int $circuit) : array {
         $debugger[] = "Zip Defluxer";
     } 
     if ($circuit%13 == 0) {
-        $debugger[] = "Moter";
+        $debugger[] = "Motor";
     }
     return $debugger;
 }
