@@ -1,24 +1,16 @@
 <?php
-function myArrayMap(?callable $callback, array $array, array ...$arrays)
-{
+function myArrayMap(callable|null $callback, array ...$arrays) {
     if ($callback === null) {
-        if (count($arrays) <= 0) {
-            return $array;
-        } else {
-            $newArray = [];
-            for ($i = 0; $i < count($array); $i++) {
-                $content = [$array[$i]];
-                foreach ($arrays as $array) {
-                    $content[] = $array[$i];
-                }
-                $newArray[] = $content;
-            }
-            return $newArray;
-        }
+        return $arrays;
     }
     $result = [];
-    foreach ($array as $key => $value) {
-        $result[$key] = $callback($value);
+    $arrays = array_values($arrays);
+    $count = count($arrays[0]);
+    for ($i = 0; $i < $count; $i++) {
+        $args = [];
+        foreach ($arrays as $array) {
+            $args[] = $array[$i];
+        }
+        $result[] = $callback(...$args);
     }
     return $result;
-}
