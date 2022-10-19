@@ -12,8 +12,8 @@ function myArrayMap(?callable $callback, array $array, array ...$arrays)
                     $content[] = $array[$i];
                 }
                 $newArray[] = $content;
-                return $newArray;
             }
+            return $newArray;
         }
     }
     $result = [];
