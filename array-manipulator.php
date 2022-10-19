@@ -11,7 +11,7 @@ function push(array $tab, string... $elements): int {
     foreach ($elements as $e) {
         $tab[] = $e;
     }
-    return count($liste);
+    return count($tab);
 }
 
 function sum(array $liste): int {
