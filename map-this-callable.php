@@ -10,7 +10,11 @@ function myArrayMap(?callable $callback, array $array, array ...$arrays)
     }
     $result = [];
     for ($i = 0; $i < count($array); $i++) {
-        $result = $callback($array[$i], ...$arrays[$i]);
+        $temp = [];
+        foreach ($arrays as $array) {
+            $temp[] = $array[$i];
+        }
+        $result = $callback($array[$i], ...$temp);
     }
     return $result;
 }
