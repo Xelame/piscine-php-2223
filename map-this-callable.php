@@ -10,7 +10,7 @@ function myArrayMap(?callable $callback, array $array, array ...$arrays)
     }
     $result = [];
     foreach ($array as $key => $value) {
-        $result[$key] = $callback($value, ...array_map(function ($array) use ($key) {
+        $result[$key] = $callback($value, ...myArrayMap(function ($array) use ($key) {
             return $array[$key];
         }, $arrays));
     }
