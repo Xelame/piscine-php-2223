@@ -4,7 +4,7 @@ class Car {
     private float $tank;
 
     public function __construct() {
-        $this->tank = 0;
+        $this->tank = 6;
     }
 
     public function setTank(float $gallons): self {
