@@ -44,3 +44,7 @@ function merge(array $liste1, array $liste2, array $liste3): array {
     }
     return $merged;
 }
+
+$tab = [];
+
+echo push($tab, "first", "second", "five");
