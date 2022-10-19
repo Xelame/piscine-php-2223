@@ -14,7 +14,7 @@ function myArrayMap(?callable $callback, array $array, array ...$arrays)
         foreach ($arrays as $array) {
             $temp[] = $array[$i];
         }
-        $result = $callback($array[$i], ...$temp);
+        $result[] = $callback($array[$i], ...$temp);
     }
     return $result;
 }
@@ -31,3 +31,5 @@ function zip(array $array, array ...$arrays)
     }
     return $result;
 }
+
+print_r(myArrayMap(static fn ($n) => $n * $n * $n, [1, 2, 3 ,4 ,5]));
