@@ -15,4 +15,5 @@ function manageMovements(string $instruction) : array {
         }
         $previousMove = $move;
     }
+    return $movements;
 }
