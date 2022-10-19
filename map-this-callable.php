@@ -1,6 +1,8 @@
 <?php
 function myArrayMap(callable $callback, array $array, array ...$arrays) {
-    $keys = array_keys($array);
-    array_unshift($arrays, $keys, $array);
-    return array_combine($keys, myArrayMap($callback, ...$arrays));
+    $result = [];
+    foreach ($array as $key => $value) {
+        $result[$key] = $callback($value);
+    }
+    return $result;
 }
