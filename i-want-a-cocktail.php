@@ -8,7 +8,7 @@ class Mojito
 
     public function __construct() {
         $this->price = 8;
-        $this->alcoholRate = 0.05;
+        $this->alcoholRate = 0.15;
         $this->ingredients = ["rum", "lime", "sparkling", "water", "mint", "sugar"];
     }
 }
