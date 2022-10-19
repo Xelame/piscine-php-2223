@@ -1,7 +1,7 @@
 <?php
 
 class Car {
-    private float $tank = 0;
+    private int $tank = 0;
 
     public function __construct() {
         $this->tank = 6;
@@ -12,7 +12,7 @@ class Car {
         return $this;
     }
 
-    public function getTank(): float {
+    public function getTank(): int {
         return $this->tank;
     }
 
