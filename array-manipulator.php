@@ -7,7 +7,7 @@ function reverse(array $liste): array {
     return $reversed;
 }
 
-function push(array $liste, string... $elements): int {
+function push(array $liste, string... $elements): int { 
     foreach ($elements as $e) {
         $liste[] = $e;
     }
