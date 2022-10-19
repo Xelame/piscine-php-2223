@@ -14,3 +14,4 @@ function myArrayMap(callable|null $callback, array ...$arrays) {
         $result[] = $callback(...$args);
     }
     return $result;
+}
