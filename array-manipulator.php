@@ -30,3 +30,17 @@ function arrayContains(array $liste, int|string|float $searched): mixed {
     }
     return "Nothing";
 }
+
+function merge(array $liste1, array $liste2, array $liste3): array {
+    $merged = [];
+    foreach ($liste1 as $e) {
+        $merged[] = $e;
+    }
+    foreach ($liste2 as $e) {
+        $merged[] = $e;
+    }
+    foreach ($liste3 as $e) {
+        $merged[] = $e;
+    }
+    return $merged;
+}
