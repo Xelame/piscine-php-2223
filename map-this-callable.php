@@ -8,7 +8,10 @@ function myArrayMap(?callable $callback, array $array, array ...$arrays)
             return zip($array, ...$arrays);
         }
     }
-    $result = $callback($array);
+    $result = [];
+    for ($i = 0; $i < count($array); $i++) {
+        $result = $callback($array[$i], ...$arrays[$i]);
+    }
     return $result;
 }
 
