@@ -32,4 +32,3 @@ function zip(array $array, array ...$arrays)
     return $result;
 }
 
-print_r(myArrayMap(static fn ($n) => $n * $n * $n, [1, 2, 3 ,4 ,5]));
