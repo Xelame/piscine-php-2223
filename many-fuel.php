@@ -1,13 +1,13 @@
 <?php
 
 class Car {
-    private float $tank;
+    private float $tank = 0;
 
     public function __construct() {
         $this->tank = 6;
     }
 
-    public function fill(float $gallons): self {
+    public function setTank(float $gallons): self {
         $this->tank += $gallons;
         return $this;
     }
