@@ -10,9 +10,12 @@ function myArrayMap(?callable $callback, array $array, array ...$arrays)
     }
     $result = [];
     foreach ($array as $key => $value) {
-        $result[$key] = $callback($value, ...myArrayMap(function ($array) use ($key) {
-            return $array[$key];
-        }, $arrays));
+        $temp = [];
+        echo $value . PHP_EOL;
+        foreach ($arrays as $array) {
+            $temp[] = $array[$key];
+        }
+        $result[] = $callback($value, ...$temp);
     }
     return $result;
 }
