@@ -15,16 +15,15 @@ function myArrayMap(?callable $callback, array $array, array ...$arrays)
     return $result;
 }
 
-
+// Zip arrays without using array_map
 function zip(array $array, array ...$arrays)
 {
     $result = [];
-    for ($i = 0; $i < count($array); $i++) {
-        $content = [$array[$i]];
+    foreach ($array as $key => $value) {
+        $result[$key] = [$value];
         foreach ($arrays as $array) {
-            $content[] = $array[$i];
+            $result[$key][] = $array[$key];
         }
-        $result[] = $content;
     }
     return $result;
 }
