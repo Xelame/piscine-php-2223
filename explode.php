@@ -4,8 +4,8 @@ function explodeWords(string $string, string $delimiter = ' ', int $limit = PHP_
     $result = [];
     $word = '';
     $i = 0;
-    while ($i < strlen($string) && count($result) < $limit) {
-        if ($string[$i] === $delimiter) {
+    while ($i < strlen($string)) {
+        if ($string[$i] === $delimiter && count($result) < $limit - 1) {
             $result[] = $word;
             $word = '';
         } else {
