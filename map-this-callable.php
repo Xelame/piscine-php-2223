@@ -1,8 +1,14 @@
 <?php
 function myArrayMap(?callable $callback, array $array, array... $arrays) : array {
     $result = [];
-    foreach ($array as $key => $value) {
-        $result[$key] = $callback($value);
+    $arrays[] = $array;
+    $count = count($array);
+    for ($i = 0; $i < $count; $i++) {
+        $args = [];
+        foreach ($arrays as $array) {
+            $args[] = $array[$i];
+        }
+        $result[] = $callback(...$args);
     }
     return $result;
 }
