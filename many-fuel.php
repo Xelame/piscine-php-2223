@@ -7,7 +7,7 @@ class Car {
         $this->tank = 0;
     }
 
-    public function settank(float $gallons): self {
+    public function setTank(float $gallons): self {
         $this->tank += $gallons;
         return $this;
     }
