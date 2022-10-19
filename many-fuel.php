@@ -12,9 +12,7 @@ class Car {
         return $this;
     }
 
-    public function getTank(): float {
-        return $this->tank;
-    }
+
 
     public function ride(float $kilometers): void {
         $gallons = $kilometers / 20;
