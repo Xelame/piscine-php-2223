@@ -1,4 +1,6 @@
 <?php
 function f() {
-    return array(static fn () => a + b, static fn () => a - b, static fn () => a * b); 
+    return array('+' => function($a, $b) { return $a + $b; },
+                 '-' => function($a, $b) { return $a - $b; },
+                 '*' => function($a, $b) { return $a * $b; });
 };
