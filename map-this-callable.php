@@ -1,5 +1,5 @@
 <?php
-function myArrayMap(?callable $callback, array $array, array... $arrays) : array {
+function myArrayMap(callable|null $callback, array $array, array... $arrays) : array {
     $result = [];
     $arrays[] = $array;
     $count = count($array);
