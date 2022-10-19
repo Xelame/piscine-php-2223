@@ -15,4 +15,5 @@ function checkCircuits(int $circuit) : array {
     } elseif ($circuit%13 == 0) {
         $debugger[] = "Moter";
     }
+    return $debugger;
 }
