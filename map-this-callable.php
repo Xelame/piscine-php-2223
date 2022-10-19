@@ -10,11 +10,12 @@ function myArrayMap(?callable $callback, array $array, array ...$arrays)
     }
     $result = [];
     for ($i = 0; $i < count($array); $i++) {
+        $item = $array[$i];
         $temp = [];
         foreach ($arrays as $array) {
             $temp[] = $array[$i];
         }
-        $result[] = $callback($array[$i], ...$temp);
+        $result[] = $callback($item, ...$temp);
     }
     return $result;
 }
@@ -32,3 +33,4 @@ function zip(array $array, array ...$arrays)
     return $result;
 }
 
+print_r(myArrayMap(static fn ($n) => $n['value'], ['value1' => 1, 'value2' => 2, 'value3' => 3]));
