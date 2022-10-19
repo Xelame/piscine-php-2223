@@ -3,17 +3,24 @@
 function manageMovements(string $instruction) : array {
     $movements = [];
     $previousMove = '';
-    foreach (str_split($instruction) as $move) {
-        if ($move == 'R') {
-            $movements[] = 'RIGHT' . $previousMove != $move ? '' : ' AGAIN';
-        } elseif ($move == 'L') {
-            $movements[] = 'LEFT' . $previousMove != $move ? '' : ' AGAIN';
-        } elseif ($move == 'F') {
-            $movements[] = 'FRONT' . $previousMove != $move ? '' : ' AGAIN';
-        } elseif ($move == 'B') {
-            $movements[] = 'BACKWARDS' . $previousMove != $move ? '' : ' AGAIN';
+    for ($i = 0; $i < strlen($instruction); $i++) {
+        $move = $instruction[$i];
+        if ($move === 'R') {
+            $move = 'RIGHT';
+        } elseif ($move === 'L') {
+            $move = 'LEFT';
+        } elseif ($move === 'F') {
+            $move = 'FRONT';
+        } elseif ($move === 'B') {
+            $move = 'BACKWARDS';
         }
+        if ($move === $previousMove) {
+            $move .= ' AGAIN';
+        }
+        $movements[] = $move;
         $previousMove = $move;
     }
     return $movements;
 }
+
+echo join(manageMovements('RLB'));
