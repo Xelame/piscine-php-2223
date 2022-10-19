@@ -12,6 +12,7 @@ function myArrayMap(?callable $callback, array $array, array ...$arrays)
     for ($i = 0; $i < count($array); $i++) {
         $result[] = $callback($array[$i]);
     }
+    return $result;
 }
 
 // Zip arrays without using array_map
