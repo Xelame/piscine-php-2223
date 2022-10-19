@@ -9,13 +9,10 @@ function myArrayMap(?callable $callback, array $array, array ...$arrays)
         }
     }
     $result = [];
-    for ($i = 0; $i < count($array); $i++) {
-        $item = $array[$i];
-        $temp = [];
-        foreach ($arrays as $array) {
-            $temp[] = $array[$i];
-        }
-        $result[] = $callback($item, ...$temp);
+    foreach ($array as $key => $value) {
+        $result[$key] = $callback($value, ...array_map(function ($array) use ($key) {
+            return $array[$key];
+        }, $arrays));
     }
     return $result;
 }
