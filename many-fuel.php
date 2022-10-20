@@ -8,7 +8,7 @@ class Car {
         return $this;
     }
 
-    public function getTank(): int {
+    public function getTank(): float {
         return $this->tank;
     }
 
