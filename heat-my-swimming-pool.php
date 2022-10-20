@@ -32,5 +32,6 @@ class PoolTemps implements PoolTempsInterface {
         if ($this->actualTemp >= 25 && array_reduce($this->lastDaysTemps, fn($a, $b) => $a + $b) / count($this->lastDaysTemps) > 20) {
             return true;
         }
+        return false;
     }
 }
