@@ -12,7 +12,7 @@ class Car {
         return $this;
     }
 
-    public function getTank(): float|int {
+    public function getTank(): int {
         return $this->tank;
     }
 
