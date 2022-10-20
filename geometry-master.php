@@ -24,19 +24,19 @@ class Rectangle extends AbstractGeometry {
     }
 }
 
-class Circle extends AbstractGeometry {
-    private float $radius;
+class Square extends AbstractGeometry {
+    private float $side;
 
-    public function __construct(float $radius) {
-        $this->radius = $radius;
+    public function __construct(float $side) {
+        $this->side = $side;
     }
 
     public function area(): float {
-        return pi() * $this->radius ** 2;
+        return $this->side * $this->side;
     }
 
     public function perimeter(): float {
-        return 2 * pi() * $this->radius;
+        return 4 * $this->side;
     }
 }
 
