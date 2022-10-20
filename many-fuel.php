@@ -1,7 +1,7 @@
 <?php
 
 class Car {
-    private int $tank = 0;
+    private float $tank = 0;
 
     public function setTank(float $gallons): self {
         $this->tank += $gallons;
@@ -13,7 +13,7 @@ class Car {
     }
 
     public function ride(float $kilometers): self {
-        $gallons = round($kilometers / 20);
+        $gallons = $kilometers / 20;
         $this->tank -= $gallons;
         return $this;
     }
