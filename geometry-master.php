@@ -24,9 +24,19 @@ class Rectangle extends AbstractGeometry {
     }
 }
 
-class Square extends Rectangle {
+class Square extends AbstractGeometry {
+    private int $side;
+
     public function __construct(int $side) {
-        parent::__construct($side, $side);
+        $this->side = $side;
+    }
+
+    public function area(): int {
+        return $this->side ** 2;
+    }
+
+    public function perimeter(): int {
+        return 4 * $this->side;
     }
 }
 
