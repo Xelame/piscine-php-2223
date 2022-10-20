@@ -7,10 +7,10 @@ abstract class AbstractGeometry  {
 }
 
 class Rectangle extends AbstractGeometry {
-    private float $width;
-    private float $height;
+    private int $width;
+    private int $height;
 
-    public function __construct(float $width, float $height) {
+    public function __construct(int $width, int $height) {
         $this->width = $width;
         $this->height = $height;
     }
@@ -60,3 +60,5 @@ class Triangle extends AbstractGeometry {
         return $this->a + $this->b + $this->c;
     }
 }
+
+echo (new Rectangle(6, 3))->area();
