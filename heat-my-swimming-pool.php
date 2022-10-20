@@ -8,7 +8,7 @@ interface PoolTempsInterface {
 class PoolTemps implements PoolTempsInterface {
     private int $actualTemp;
     private array $lastDaysTemps;
-    private bool $isActive = false;
+    public bool $isActive = false;
 
     public function __construct(int $actualTemp, array $lastDaysTemps) {
         $this->actualTemp = $actualTemp;
