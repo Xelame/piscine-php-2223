@@ -13,9 +13,6 @@ class PoolTemps implements PoolTempsInterface {
     public function __construct(int $actualTemp, array $lastDaysTemps) {
         $this->actualTemp = $actualTemp;
         $this->lastDaysTemps = $lastDaysTemps;
-        if ($actualTemp >= 25 && array_reduce($lastDaysTemps, fn($a, $b) => $a + $b) / count($lastDaysTemps) > 20) {
-            $this->isActive = true;
-        }
     }
 
     public function getActualTemp(): int {
@@ -32,6 +29,8 @@ class PoolTemps implements PoolTempsInterface {
     }
 
     public function activateHeater(): bool {
-        return $this->setHeater(true);
+        if ($this->actualTemp >= 25 && array_reduce($this->lastDaysTemps, fn($a, $b) => $a + $b) / count($this->lastDaysTemps) > 20) {
+            return true;
+        }
     }
 }
